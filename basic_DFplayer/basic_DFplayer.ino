@@ -3,7 +3,7 @@
 
 #if (defined(ARDUINO_AVR_UNO) || defined(ESP8266))   // Using a soft serial port
 #include <SoftwareSerial.h>
-SoftwareSerial softSerial(4 , 5);  //softSerial(rx, tx);
+SoftwareSerial softSerial(14 , 15);  //softSerial(rx, tx);
 #define FPSerial softSerial
 #else
 #define FPSerial Serial1
@@ -15,7 +15,7 @@ void printDetail(uint8_t type, int value);
 void setup()
 {
 #if (defined ESP32)
-  FPSerial.begin(9600, SERIAL_8N1, /*rx =*/D3, /*tx =*/D2);
+  FPSerial.begin(9600, SERIAL_8N1, /*rx =*/14, /*tx =*/15);
 #else
   FPSerial.begin(9600);
 #endif
